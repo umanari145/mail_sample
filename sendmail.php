@@ -1,20 +1,23 @@
 <?php
 
-require_once __DIR__ . "vendor/autoload.php";
+require_once __DIR__ . "/vendor/autoload.php";
+require_once "config.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
 
 $mail = new PHPMailer(true);
 $mail->CharSet = "iso-2022-jp";
 $mail->isSMTP();
-$mail->Host = SM;
+$mail->Host = SMTP_SERVER;
 $mail->SMTPAuth = true;
 $mail->Username = MAIL_USER_NAME;
 $mail->Password = MAIL_PASSWORD;
 $mail->Port = 587;
 $mail->From = FROM_ADDRESS;
 
-$mail->addAddress();
-$mail->addCC();
-$mail->addBCC();
+$mail->addAddress('umanari145@gmail.com');
+//$mail->addCC();
+//$mail->addBCC();
 
 $subject = '【ご連絡】ご挨拶メールを送らせていただいております。';
 $body = <<< EOF
