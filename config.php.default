@@ -1,0 +1,8 @@
+<?php
+
+define('FROM_ADDRESS', 'メールアドレス');
+define('POP_SERVER', 'pop3.xxxxxx.jpなど');
+define('SMTP_SERVER', 'smtp.xxxxx.jpなど');
+define('MAIL_USER_NAME', FROM_ADDRESS);
+define('MAIL_PASSWORD', 'アカウントパスワード');
+define('MAIL_PORT', 587か465);

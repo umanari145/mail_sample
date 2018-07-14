@@ -5,6 +5,9 @@ require_once "config.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 
+$loader = new \Twig_Loader_Filesystem(__DIR__ .'/template');
+$twig = new Twig_Environment($loader);
+
 try {
     $mail = new PHPMailer(true);
     $mail->CharSet = "iso-2022-jp";
@@ -23,11 +26,10 @@ try {
     //$mail->addBCC();
 
     $subject = '【ご連絡】ご挨拶メールを送らせていただいております。';
-    $body = <<< EOF
-本日は晴天なり
-
-EOF;
-
+    $data = [
+      'name' => 'Yamada Tarou'
+    ];
+    $body = $twig->render('sample.txt', $data);
     $mail->isHTML(false);
     $mail->FromName = mb_encode_mimeheader("サンプルメール", "ISO-2022-JP", "UTF-8");
     $mail->Subject = mb_encode_mimeheader($subject, "ISO-2022-JP", "UTF-8");
