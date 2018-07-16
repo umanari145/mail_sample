@@ -1,6 +1,22 @@
 {
+    "config": {
+      "secure-http": false
+    },
+    "repositories": [
+    {
+      "type": "pear",
+      "url": "http://pear.php.net"
+    }
+    ],
     "require": {
         "phpmailer/phpmailer": "^6.0",
         "twig/twig": "^2.5"
+    },
+    "require-dev": {
+        "pear-pear.php.net/PEAR": "*",
+        "pear-pear.php.net/Log": "*",
+        "pear-pear.php.net/Net_POP3": "*",
+        "pear-pear.php.net/Mail": "*",
+        "pear-pear.php.net/Mail_MimeDecode": "*"
     }
 }

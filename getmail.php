@@ -18,13 +18,10 @@ fputs($fp, $message2);
 $r = fgets($fp, 1024);
 fputs($fp, "STAT\r\n");
 $r = fgets($fp, 1024);
-
-
 sscanf($r, '+OK %d %d', $num, $size);
 //結果表示
 var_dump($num, $size);
 //メールデータ取得（件数分 RETR）
-
 $data = array();
 for ($i = 1; $i <= $num; ++$i) {
     //RETR n -n番目のメッセージ取得（ヘッダ含）
