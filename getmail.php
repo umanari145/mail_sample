@@ -9,7 +9,6 @@ $r = fgets($fp, 1024);
 $message = sprintf("USER %s\r\n", MAIL_USER_NAME);
 fputs($fp, $message);
 
-
 $r = fgets($fp, 1024);
 $message2 = sprintf("PASS %s\r\n", MAIL_PASSWORD);
 fputs($fp, $message2);
