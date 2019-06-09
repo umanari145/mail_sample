@@ -21,7 +21,11 @@ try {
     $mail->SMTPAuth = true;
     $mail->Username = MAIL_USER_NAME;
     $mail->Password = MAIL_PASSWORD;
-    $mail->SMTPSecure = 'CRAM-MD5';
+
+//    $mail->SMTPSecure = 'tls'; NG
+//    $mail->SMTPSecure = ''; OK
+//    $mail->SMTPSecure = 'CRAM-MD5'; OK
+
     $mail->Port = MAIL_PORT;
     $mail->From = FROM_ADDRESS;
 

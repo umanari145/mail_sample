@@ -19,7 +19,8 @@ if ($numMsg > 0) {
           'decode_bodies' => true,
           'decode_headers' => true
         ]);
-        //var_dump($mailData);
+        var_dump($mailData);
+        exit;
         echo $mailData->headers["from"] ."\n";
         echo $mailData->body ."\n";
     }
